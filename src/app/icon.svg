@@ -1,0 +1,27 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <!-- 背景 (任意: faviconなどで透明にしたい場合は削除またはfill="transparent"に) -->
+  <rect width="100" height="100" rx="20" fill="#E0F2FE"/> <!-- sky-100 -->
+
+  <!-- 開いた本 -->
+  <path d="M20 75C20 70 25 68 30 68H70C75 68 80 70 80 75V80H20V75Z" fill="#38BDF8"/> <!-- sky-500 -->
+  <path d="M50 30C35 30 25 40 25 50V70H75V50C75 40 65 30 50 30Z" fill="#FFFFFF"/>
+  <path d="M25 70H75V72C75 76 70 78 65 78H35C30 78 25 76 25 72V70Z" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/> <!-- slate-300 -->
+
+  <!-- 本のページ線 -->
+  <line x1="50" y1="32" x2="50" y2="70" stroke="#A5F3FC" stroke-width="3"/> <!-- sky-200 -->
+  <line x1="40" y1="38" x2="40" y2="70" stroke="#E0F2FE" stroke-width="1.5" stroke-linecap="round"/> <!-- sky-100 -->
+  <line x1="35" y1="42" x2="35" y2="70" stroke="#E0F2FE" stroke-width="1.5" stroke-linecap="round"/> <!-- sky-100 -->
+  <line x1="60" y1="38" x2="60" y2="70" stroke="#E0F2FE" stroke-width="1.5" stroke-linecap="round"/> <!-- sky-100 -->
+  <line x1="65" y1="42" x2="65" y2="70" stroke="#E0F2FE" stroke-width="1.5" stroke-linecap="round"/> <!-- sky-100 -->
+
+  <!-- 本からの広がり (知識・物語のイメージ) -->
+  <circle cx="50" cy="25" r="5" fill="#FDBA74"/> <!-- orange-300 -->
+  <path d="M50 20C52.7614 20 55 17.7614 55 15C55 12.2386 52.7614 10 50 10C47.2386 10 45 12.2386 45 15C45 17.7614 47.2386 20 50 20Z" fill="#FB923C" opacity="0.8"/> <!-- orange-400 -->
+  <path d="M40 22C41.6569 22 43 20.6569 43 19C43 17.3431 41.6569 16 40 16C38.3431 16 37 17.3431 37 19C37 20.6569 38.3431 22 40 22Z" fill="#FDBA74" opacity="0.7"/> <!-- orange-300 -->
+   <path d="M60 22C61.6569 22 63 20.6569 63 19C63 17.3431 61.6569 16 60 16C58.3431 16 57 17.3431 57 19C57 20.6569 58.3431 22 60 22Z" fill="#FDBA74" opacity="0.7"/> <!-- orange-300 -->
+
+  <!-- しおり (アクセント) -->
+  <rect x="68" y="28" width="4" height="18" rx="2" fill="#F472B6"/> <!-- pink-500 -->
+  <rect x="68" y="44" width="4" height="4" rx="1" fill="#EC4899"/> <!-- pink-600 -->
+
+</svg>
