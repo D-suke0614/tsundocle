@@ -1,7 +1,5 @@
 import styles from './page.module.css'
 
 export default function Home() {
-  return (
-    <div className={styles.contentWrapper}>hello world</div>
-  )
+  return <div className={styles.contentWrapper}>hello world</div>
 }
