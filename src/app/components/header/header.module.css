@@ -1,0 +1,24 @@
+.header {
+  position: sticky;
+  inset: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5em 15em;
+  background-color: #fff;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.title {
+  color: #2f80bf;
+}
+
+.navItems {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navLink:hover {
+  color: #2f80bf;
+  text-decoration: underline;
+}
