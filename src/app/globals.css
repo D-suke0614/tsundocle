@@ -48,6 +48,10 @@ ul {
   list-style: none;
   padding: 0;
 }
+button:hover {
+  cursor: pointer;
+}
+
 #root,
 #__next {
   isolation: isolate;

@@ -1,3 +1,50 @@
 .contentWrapper {
   padding: 3rem 15rem 5rem;
 }
+
+.listHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.listTitle {
+  font-size: 2rem;
+}
+.listAddButton {
+  color: #fff;
+  font-weight: bold;
+  background-color: #0ea5e9;
+  border: none;
+  border-radius: 100vmax;
+  padding: 1rem 1.5rem;
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+.listAddButton:hover {
+  background-color: #0ea4e9c4;
+}
+
+.amountCardList {
+  margin-top: 3rem;
+  display: flex;
+  gap: 5%;
+}
+.amountCard {
+  width: 30%;
+  background-color: #fff;
+  padding: 1rem 1.5rem 2.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 15px;
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+.amountCardTitle {
+  color: #768397;
+  font-size: 1rem;
+}
+.amountCardEmphasisText {
+  color: #ef4444;
+}
