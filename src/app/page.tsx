@@ -7,9 +7,9 @@ export default function Home() {
 
   return (
     <div className={styles.contentWrapper}>
-      <div className={styles.listHeader}>
-        <h2 className={styles.listTitle}>Book Shelf</h2>
-        <button className={styles.listAddButton} type="button" onClick={handleClick}>
+      <div className={styles.contentHeader}>
+        <h2 className={styles.contentTitle}>Book Shelf</h2>
+        <button className={styles.contentAddButton} type="button" onClick={handleClick}>
           + 新しい本を登録
         </button>
       </div>
@@ -27,7 +27,35 @@ export default function Home() {
           <span className={styles.amountCardEmphasisText}>¥100,000</span>
         </div>
       </div>
-      <div></div>
+      <div className={styles.listWrapper}>
+        <div className={styles.listFilterWrapper}>
+          <div className={styles.listFilter}>
+            <span>フィルター：</span>
+            <button className={`${styles.listFilterButton} ${styles.activeFilter}`} type="button">
+              すべて
+            </button>
+            <button className={`${styles.listFilterButton} ${styles.inactiveFilter}`} type="button">
+              読みたい
+            </button>
+            <button className={`${styles.listFilterButton} ${styles.inactiveFilter}`} type="button">
+              読んでる
+            </button>
+            <button className={`${styles.listFilterButton} ${styles.inactiveFilter}`} type="button">
+              積んでる
+            </button>
+            <button className={`${styles.listFilterButton} ${styles.inactiveFilter}`} type="button">
+              読んだ
+            </button>
+          </div>
+          <select name="genre" id="genre" className={styles.listFilterSelect}>
+            <option value="">ジャンル絞り込みなし</option>
+            <option value="novel">小説</option>
+            <option value="business">ビジネス</option>
+            <option value="tech">技術書</option>
+          </select>
+        </div>
+        <div></div>
+      </div>
     </div>
   )
 }

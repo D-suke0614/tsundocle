@@ -1,16 +1,16 @@
 .contentWrapper {
-  padding: 3rem 15rem 5rem;
+  padding: 3rem 15% 5rem;
 }
 
-.listHeader {
+.contentHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.listTitle {
+.contentTitle {
   font-size: 2rem;
 }
-.listAddButton {
+.contentAddButton {
   color: #fff;
   font-weight: bold;
   background-color: #0ea5e9;
@@ -21,7 +21,7 @@
     0 4px 6px -1px rgb(0 0 0 / 0.1),
     0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
-.listAddButton:hover {
+.contentAddButton:hover {
   background-color: #0ea4e9c4;
 }
 
@@ -47,4 +47,43 @@
 }
 .amountCardEmphasisText {
   color: #ef4444;
+}
+
+.listWrapper {
+  margin-top: 2.5rem;
+}
+.listFilterWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.listFilter {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.listFilterButton {
+  border-radius: 100vmax;
+  padding: 0.25rem 0.75rem;
+}
+.listFilterButton.activeFilter {
+  background-color: #0ea5e9;
+  color: white;
+  border: 1px solid #0ea5e9;
+}
+.listFilterButton.inactiveFilter {
+  background-color: #fff;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+}
+.listFilterButton.inactiveFilter:hover {
+  background-color: #f1f5f9;
+}
+.listFilterSelect {
+  border-radius: 100vmax;
+  padding: 7px 0.5rem;
+  /* padding: 0.25rem 0.5rem; */
+  background-color: #fff;
+  border: 1px solid #cbd5e1;
+  color: #475569;
 }
