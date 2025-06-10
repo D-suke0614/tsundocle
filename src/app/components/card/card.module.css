@@ -1,0 +1,56 @@
+.card {
+  border-radius: 15px;
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+.card:hover {
+  box-shadow:
+    0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+.cardImage {
+  width: 100%;
+  max-height: 100%;
+  height: auto;
+  height: 300px;
+  border-radius: 15px 15px 0 0;
+  object-fit: cover;
+}
+.cardContent {
+  padding: 1rem 1.5rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.cardTitle {
+  font-weight: bold;
+}
+.cardAuthor {
+  font-size: 0.8rem;
+  color: #475569;
+}
+.cardStatus {
+  width: fit-content;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 0.25rem 0.5rem;
+  border-radius: 10px;
+}
+.cardStatus.want {
+  background-color: #dff1fd;
+  color: #0c6ba2;
+}
+.cardStatus.unread {
+  background-color: #fef2c6;
+  color: #bd6628;
+}
+.cardStatus.reading {
+  background-color: #fef9c3;
+  color: #bd8c48;
+}
+.cardStatus.done {
+  background-color: #d1f9e4;
+  color: #017856;
+}
