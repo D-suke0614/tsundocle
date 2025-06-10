@@ -1,3 +1,154 @@
 .contentWrapper {
-  padding: 3rem 15rem 5rem;
+  padding: 3rem 15% 5rem;
+}
+
+.contentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.contentTitle {
+  font-size: 2rem;
+}
+.contentAddButton {
+  color: #fff;
+  font-weight: bold;
+  background-color: #0ea5e9;
+  border: none;
+  border-radius: 100vmax;
+  padding: 1rem 1.5rem;
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+.contentAddButton:hover {
+  background-color: #0ea4e9c4;
+}
+
+.amountCardList {
+  margin-top: 3rem;
+  display: flex;
+  gap: 5%;
+}
+.amountCard {
+  width: 30%;
+  background-color: #fff;
+  padding: 1rem 1.5rem 2.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 15px;
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+.amountCardTitle {
+  color: #768397;
+  font-size: 1rem;
+}
+.amountCardEmphasisText {
+  color: #ef4444;
+}
+
+.listWrapper {
+  margin-top: 2.5rem;
+}
+.listFilterWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.listFilter {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.listFilterButton {
+  border-radius: 100vmax;
+  padding: 0.25rem 0.75rem;
+}
+.listFilterButton.activeFilter {
+  background-color: #0ea5e9;
+  color: white;
+  border: 1px solid #0ea5e9;
+}
+.listFilterButton.inactiveFilter {
+  background-color: #fff;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+}
+.listFilterButton.inactiveFilter:hover {
+  background-color: #f1f5f9;
+}
+.listFilterSelect {
+  border-radius: 100vmax;
+  padding: 7px 0.5rem;
+  background-color: #fff;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+}
+.listFilterSelect:hover {
+  background-color: #f1f5f9;
+  cursor: pointer;
+}
+.listCardWrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5%;
+  margin-top: 2.5rem;
+}
+.listCard {
+  border-radius: 15px;
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+.listCard:hover {
+  box-shadow:
+    0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+.listCardImage {
+  width: 100%;
+  max-height: 100%;
+  height: auto;
+  height: 300px;
+  border-radius: 15px 15px 0 0;
+  object-fit: cover;
+}
+.listCardContent {
+  padding: 1rem 1.5rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.listCardTitle {
+  font-weight: bold;
+}
+.listCardAuthor {
+  font-size: 0.8rem;
+  color: #475569;
+}
+.listCardStatus {
+  width: fit-content;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 0.25rem 0.5rem;
+  border-radius: 10px;
+}
+.listCardStatus.want {
+  background-color: #dff1fd;
+  color: #0c6ba2;
+}
+.listCardStatus.unread {
+  background-color: #fef2c6;
+  color: #bd6628;
+}
+.listCardStatus.reading {
+  background-color: #fef9c3;
+  color: #bd8c48;
+}
+.listCardStatus.done {
+  background-color: #d1f9e4;
+  color: #017856;
 }
