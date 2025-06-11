@@ -1,6 +1,6 @@
 'use client'
 
-import Image from 'next/image'
+import Card from '@/app/components/card/Card'
 import styles from './page.module.css'
 
 export default function Home() {
@@ -56,62 +56,30 @@ export default function Home() {
           </select>
         </div>
         <div className={styles.listCardWrapper}>
-          <div className={styles.listCard}>
-            <Image
-              src="/tsundocle.svg"
-              alt="tsundocle"
-              width={100}
-              height={288}
-              className={styles.listCardImage}
-            />
-            <div className={styles.listCardContent}>
-              <div className={styles.listCardTitle}>積読しているすごい本</div>
-              <span className={styles.listCardAuthor}>サクッと作郎</span>
-              <span className={`${styles.listCardStatus} ${styles.want}`}>読みたい</span>
-            </div>
-          </div>
-          <div className={styles.listCard}>
-            <Image
-              src="/vercel.svg"
-              alt="vercel"
-              width={100}
-              height={288}
-              className={styles.listCardImage}
-            />
-            <div className={styles.listCardContent}>
-              <div className={styles.listCardTitle}>積読しているすごい本</div>
-              <span className={styles.listCardAuthor}>サクッと作郎</span>
-              <span className={`${styles.listCardStatus} ${styles.unread}`}>積んでる</span>
-            </div>
-          </div>
-          <div className={styles.listCard}>
-            <Image
-              src="/window.svg"
-              alt="window"
-              width={100}
-              height={288}
-              className={styles.listCardImage}
-            />
-            <div className={styles.listCardContent}>
-              <div className={styles.listCardTitle}>積読しているすごい本</div>
-              <span className={styles.listCardAuthor}>サクッと作郎</span>
-              <span className={`${styles.listCardStatus} ${styles.reading}`}>読んでる</span>
-            </div>
-          </div>
-          <div className={styles.listCard}>
-            <Image
-              src="/file.svg"
-              alt="file"
-              width={100}
-              height={288}
-              className={styles.listCardImage}
-            />
-            <div className={styles.listCardContent}>
-              <div className={styles.listCardTitle}>積読しているすごい本</div>
-              <span className={styles.listCardAuthor}>サクッと作郎</span>
-              <span className={`${styles.listCardStatus} ${styles.done}`}>読んだ</span>
-            </div>
-          </div>
+          <Card
+            title="積読しているすごい本"
+            author="サクッと作郎"
+            status="want"
+            image={{ src: '/tsundocle.svg', alt: 'tsundocle' }}
+          />
+          <Card
+            title="積読しているすごい本"
+            author="サクッと作郎"
+            status="unread"
+            image={{ src: '/vercel.svg', alt: 'vercel' }}
+          />
+          <Card
+            title="積読しているすごい本"
+            author="サクッと作郎"
+            status="reading"
+            image={{ src: '/window.svg', alt: 'window' }}
+          />
+          <Card
+            title="積読しているすごい本"
+            author="サクッと作郎"
+            status="done"
+            image={{ src: '/file.svg', alt: 'file' }}
+          />
         </div>
       </div>
     </div>
