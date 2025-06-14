@@ -50,6 +50,11 @@ export default function Home() {
     },
   ]
 
+  // todo: ジャンルでセレクトできるようにする
+  // const handleGenreChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  //   console.log(e.target.value)
+  // }
+
   return (
     <div className={styles.contentWrapper}>
       <div className={styles.contentHeader}>
@@ -90,12 +95,18 @@ export default function Home() {
               </button>
             ))}
           </div>
-          <select name="genre" id="genre" className={styles.listFilterSelect}>
+          {/* todo: ジャンルでセレクトできるようにする */}
+          {/* <select
+            name="genre"
+            id="genre"
+            className={styles.listFilterSelect}
+            onChange={handleGenreChange}
+          >
             <option value="">ジャンル絞り込みなし</option>
             <option value="novel">小説</option>
             <option value="business">ビジネス</option>
             <option value="tech">技術書</option>
-          </select>
+          </select> */}
         </div>
 
         <div className={styles.listCardWrapper}>
