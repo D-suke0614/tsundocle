@@ -1,18 +1,12 @@
-import type { Status } from '@/app/types'
+import type { CardItem, Status } from '@/app/types'
 import Image from 'next/image'
 import styles from './card.module.css'
 
-type Props = {
-  title: string
-  author: string
-  image: {
-    src: string
-    alt: string
-  }
-  status: Status
-}
+type Props = CardItem
 
-export default function Card({ title, author, image, status }: Props) {
+export default function Card({ title, author, image, status, filteredStatus }: Props) {
+  if (filteredStatus !== 'all' && filteredStatus !== status) return <></>
+
   const statusLabel = (status: Status) => {
     switch (status) {
       case 'want':

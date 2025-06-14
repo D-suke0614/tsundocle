@@ -1,10 +1,59 @@
 'use client'
 
 import Card from '@/app/components/card/Card'
+import type { CardItem, FilterStatus } from '@/app/types'
+import { useState } from 'react'
 import styles from './page.module.css'
 
 export default function Home() {
   const handleClick = () => {}
+  const [filteredStatus, setFilteredStatus] = useState<FilterStatus>('all')
+  const filterItemList = [
+    { status: 'all', label: 'すべて' },
+    { status: 'want', label: '読みたい' },
+    { status: 'unread', label: '積んでる' },
+    { status: 'reading', label: '読んでる' },
+    { status: 'done', label: '読んだ' },
+  ] as const
+  const cardItems: CardItem[] = [
+    {
+      id: '1',
+      title: '積読しているすごい本',
+      author: 'サクッと作郎',
+      status: 'want',
+      filteredStatus,
+      image: { src: '/tsundocle.svg', alt: 'tsundocle' },
+    },
+    {
+      id: '2',
+      title: '積読しているすごい本',
+      author: 'サクッと作郎',
+      status: 'unread',
+      filteredStatus,
+      image: { src: '/vercel.svg', alt: 'vercel' },
+    },
+    {
+      id: '3',
+      title: '積読しているすごい本',
+      author: 'サクッと作郎',
+      status: 'reading',
+      filteredStatus,
+      image: { src: '/window.svg', alt: 'window' },
+    },
+    {
+      id: '4',
+      title: '積読しているすごい本',
+      author: 'サクッと作郎',
+      status: 'done',
+      filteredStatus,
+      image: { src: '/file.svg', alt: 'file' },
+    },
+  ]
+
+  // todo: ジャンルでセレクトできるようにする
+  // const handleGenreChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  //   console.log(e.target.value)
+  // }
 
   return (
     <div className={styles.contentWrapper}>
@@ -14,6 +63,7 @@ export default function Home() {
           + 新しい本を登録
         </button>
       </div>
+
       <div className={styles.amountCardList}>
         <div className={styles.amountCard}>
           <div className={styles.amountCardTitle}>総購入金額</div>
@@ -28,58 +78,49 @@ export default function Home() {
           <span className={styles.amountCardEmphasisText}>¥100,000</span>
         </div>
       </div>
+
       <div className={styles.listWrapper}>
         <div className={styles.listFilterWrapper}>
           <div className={styles.listFilter}>
             <span>フィルター：</span>
-            <button className={`${styles.listFilterButton} ${styles.activeFilter}`} type="button">
-              すべて
-            </button>
-            <button className={`${styles.listFilterButton} ${styles.inactiveFilter}`} type="button">
-              読みたい
-            </button>
-            <button className={`${styles.listFilterButton} ${styles.inactiveFilter}`} type="button">
-              読んでる
-            </button>
-            <button className={`${styles.listFilterButton} ${styles.inactiveFilter}`} type="button">
-              積んでる
-            </button>
-            <button className={`${styles.listFilterButton} ${styles.inactiveFilter}`} type="button">
-              読んだ
-            </button>
+            {filterItemList.map(({ status, label }) => (
+              <button
+                key={status}
+                className={`${styles.listFilterButton} ${filteredStatus === status ? styles.activeFilter : styles.inactiveFilter}`}
+                onClick={() => setFilteredStatus(status)}
+                disabled={filteredStatus === status}
+                type="button"
+              >
+                {label}
+              </button>
+            ))}
           </div>
-          <select name="genre" id="genre" className={styles.listFilterSelect}>
+          {/* todo: ジャンルでセレクトできるようにする */}
+          {/* <select
+            name="genre"
+            id="genre"
+            className={styles.listFilterSelect}
+            onChange={handleGenreChange}
+          >
             <option value="">ジャンル絞り込みなし</option>
             <option value="novel">小説</option>
             <option value="business">ビジネス</option>
             <option value="tech">技術書</option>
-          </select>
+          </select> */}
         </div>
+
         <div className={styles.listCardWrapper}>
-          <Card
-            title="積読しているすごい本"
-            author="サクッと作郎"
-            status="want"
-            image={{ src: '/tsundocle.svg', alt: 'tsundocle' }}
-          />
-          <Card
-            title="積読しているすごい本"
-            author="サクッと作郎"
-            status="unread"
-            image={{ src: '/vercel.svg', alt: 'vercel' }}
-          />
-          <Card
-            title="積読しているすごい本"
-            author="サクッと作郎"
-            status="reading"
-            image={{ src: '/window.svg', alt: 'window' }}
-          />
-          <Card
-            title="積読しているすごい本"
-            author="サクッと作郎"
-            status="done"
-            image={{ src: '/file.svg', alt: 'file' }}
-          />
+          {cardItems.map(({ id, title, author, status, filteredStatus, image }) => (
+            <Card
+              key={id}
+              id={id}
+              title={title}
+              author={author}
+              status={status}
+              filteredStatus={filteredStatus}
+              image={image}
+            />
+          ))}
         </div>
       </div>
     </div>
