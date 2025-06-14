@@ -71,6 +71,9 @@
   color: white;
   border: 1px solid #0ea5e9;
 }
+.listFilterButton.activeFilter:hover {
+  cursor: default;
+}
 .listFilterButton.inactiveFilter {
   background-color: #fff;
   border: 1px solid #cbd5e1;

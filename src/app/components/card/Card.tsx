@@ -1,4 +1,4 @@
-import type { Status } from '@/app/types'
+import type { FilterStatus, Status } from '@/app/types'
 import Image from 'next/image'
 import styles from './card.module.css'
 
@@ -10,9 +10,12 @@ type Props = {
     alt: string
   }
   status: Status
+  filteredStatus: FilterStatus
 }
 
-export default function Card({ title, author, image, status }: Props) {
+export default function Card({ title, author, image, status, filteredStatus }: Props) {
+  if (filteredStatus !== 'all' && filteredStatus !== status) return <></>
+
   const statusLabel = (status: Status) => {
     switch (status) {
       case 'want':
