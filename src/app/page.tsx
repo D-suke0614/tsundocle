@@ -1,12 +1,13 @@
 'use client'
 
 import Card from '@/app/components/card/Card'
-import type { FilterStatus } from '@/app/types'
+import type { CardItem, FilterStatus } from '@/app/types'
 import { useState } from 'react'
 import styles from './page.module.css'
 
 export default function Home() {
   const handleClick = () => {}
+  const [filteredStatus, setFilteredStatus] = useState<FilterStatus>('all')
   const filterItemList = [
     { status: 'all', label: 'すべて' },
     { status: 'want', label: '読みたい' },
@@ -14,7 +15,40 @@ export default function Home() {
     { status: 'reading', label: '読んでる' },
     { status: 'done', label: '読んだ' },
   ] as const
-  const [filteredStatus, setFilteredStatus] = useState<FilterStatus>('all')
+  const cardItems: CardItem[] = [
+    {
+      id: '1',
+      title: '積読しているすごい本',
+      author: 'サクッと作郎',
+      status: 'want',
+      filteredStatus,
+      image: { src: '/tsundocle.svg', alt: 'tsundocle' },
+    },
+    {
+      id: '2',
+      title: '積読しているすごい本',
+      author: 'サクッと作郎',
+      status: 'unread',
+      filteredStatus,
+      image: { src: '/vercel.svg', alt: 'vercel' },
+    },
+    {
+      id: '3',
+      title: '積読しているすごい本',
+      author: 'サクッと作郎',
+      status: 'reading',
+      filteredStatus,
+      image: { src: '/window.svg', alt: 'window' },
+    },
+    {
+      id: '4',
+      title: '積読しているすごい本',
+      author: 'サクッと作郎',
+      status: 'done',
+      filteredStatus,
+      image: { src: '/file.svg', alt: 'file' },
+    },
+  ]
 
   return (
     <div className={styles.contentWrapper}>
@@ -65,34 +99,17 @@ export default function Home() {
         </div>
 
         <div className={styles.listCardWrapper}>
-          <Card
-            title="積読しているすごい本"
-            author="サクッと作郎"
-            status="want"
-            filteredStatus={filteredStatus}
-            image={{ src: '/tsundocle.svg', alt: 'tsundocle' }}
-          />
-          <Card
-            title="積読しているすごい本"
-            author="サクッと作郎"
-            status="unread"
-            filteredStatus={filteredStatus}
-            image={{ src: '/vercel.svg', alt: 'vercel' }}
-          />
-          <Card
-            title="積読しているすごい本"
-            author="サクッと作郎"
-            status="reading"
-            filteredStatus={filteredStatus}
-            image={{ src: '/window.svg', alt: 'window' }}
-          />
-          <Card
-            title="積読しているすごい本"
-            author="サクッと作郎"
-            status="done"
-            filteredStatus={filteredStatus}
-            image={{ src: '/file.svg', alt: 'file' }}
-          />
+          {cardItems.map(({ id, title, author, status, filteredStatus, image }) => (
+            <Card
+              key={id}
+              id={id}
+              title={title}
+              author={author}
+              status={status}
+              filteredStatus={filteredStatus}
+              image={image}
+            />
+          ))}
         </div>
       </div>
     </div>
